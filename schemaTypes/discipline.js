@@ -10,6 +10,21 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'icone',
+      title: 'Icône',
+      type: 'string',
+      options: {
+        list: [
+          { title: '✨ Sparkles (Karaté)', value: 'Sparkles' },
+          { title: '⭕ CircleDot (Viet Vo Dao)', value: 'CircleDot' },
+          { title: '🛡 Shield (Aïkido)', value: 'Shield' },
+          { title: '💨 Wind (Tai Chi / Qi Gong)', value: 'Wind' },
+          { title: '⚔️ Swords (Épée)', value: 'Swords' },
+          { title: '✋ Hand (Wutao)', value: 'Hand' },
+        ]
+      }
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
