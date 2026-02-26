@@ -8,12 +8,7 @@ export default {
       title: 'Nom complet',
       type: 'string',
       validation: Rule => Rule.required()
-    },
-    {
-      name: 'nomCourt',
-      title: 'Nom court (pour les menus)',
-      type: 'string',
-    },
+    },    
     {
       // Option A — liste fermée avec menu déroulant
       name: 'icone',
