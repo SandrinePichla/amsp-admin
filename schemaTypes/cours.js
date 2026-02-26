@@ -56,6 +56,12 @@ export default {
       name: 'lieu',
       title: 'Lieu',
       type: 'string',
+      options: {
+        list: [
+          { title: 'Dojo Gymnase', value: 'dojoGymnase' },
+          { title: 'Salle des fêtes', value: 'salleDesFetes' },
+        ]
+      }
     }
   ],
   preview: {

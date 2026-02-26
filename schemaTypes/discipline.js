@@ -63,6 +63,21 @@ export default {
       }
     },
     {
+      name: 'ages',
+      title: 'Âges acceptés',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: '6/8 ans', value: '6-8ans' },
+          { title: '9/12 ans', value: '9-12ans' },
+          { title: '13 ans et +', value: '13ansEtPlus' },
+          { title: '14 ans et +', value: '14ansEtPlus' },
+          { title: 'Adultes', value: 'adultes' },
+        ]
+      }
+    },
+    {
       name: 'ordre',
       title: 'Ordre d\'affichage',
       type: 'number',
