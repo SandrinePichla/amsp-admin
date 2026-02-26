@@ -28,6 +28,12 @@ export default {
       options: { dateFormat: 'DD/MM/YYYY' }
     },
     {
+      name: 'horaires',
+      title: 'Horaires',
+      type: 'string',
+      description: 'Ex: De 19h00 à 21h00 ou Samedi 9h30 - 12h30'
+    },
+    {
       name: 'contenu',
       title: 'Contenu / Description',
       type: 'text',
@@ -62,6 +68,12 @@ export default {
       initialValue: '06.82.16.22.66 ou artsmartiauxstpierrois@gmail.com',
       description: 'Laisser vide pour afficher les coordonnées par défaut'
     },   
+    {
+      name: 'minimumPersonnes',
+      title: 'Nombre minimum de participants',
+      type: 'number',
+      description: 'Le stage sera maintenu à partir de ce nombre d\'inscrits'
+    },
     {
       name: 'publie',
       title: 'Publié',
