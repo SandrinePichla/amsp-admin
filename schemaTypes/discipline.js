@@ -15,21 +15,12 @@ export default {
       type: 'string',
     },
     {
+      // Saisie libre — elle tape le nom de l'icône directement
+      // On lui fournit la liste des icônes disponibles en description
       name: 'icone',
       title: 'Icône',
       type: 'string',
-      options: {
-        list: [
-          { title: '🛡 Shield (Karaté Shotokan)', value: 'Shield' },
-          { title: '⚔️ Swords (Viet Vo Dao / Épée)', value: 'Swords' },
-          { title: '💨 Wind (Tai Chi)', value: 'Wind' },
-          { title: '🌿 Leaf (Qi Gong)', value: 'Leaf' },
-          { title: '🌊 Waves (Wutao)', value: 'Waves' },
-          { title: '✋ Hand (Aïkido)', value: 'Hand' },
-          { title: '⭕ CircleDot (Épée)', value: 'CircleDot' },
-          { title: '✨ Sparkles', value: 'Sparkles' },
-        ]
-      }
+      description: 'Icônes disponibles : Shield, Swords, Wind, Leaf, Waves, Hand, CircleDot, Sparkles',
     },
     {
       name: 'description',
@@ -48,11 +39,11 @@ export default {
       type: 'string',
     },
     {
-      // Option C : liste prédéfinie + saisie libre
-      // La responsable choisit dans la liste OU tape un nouveau nom
-      name: 'professeur',
-      title: 'Professeur',
-      type: 'string',
+      // Array de strings avec liste prédéfinie + "Add item" pour saisie libre
+      name: 'professeurs',
+      title: 'Professeurs',
+      type: 'array',
+      of: [{ type: 'string' }],
       options: {
         list: [
           { title: 'Stéphanie Lamoureux', value: 'Stéphanie Lamoureux' },
@@ -62,13 +53,8 @@ export default {
           { title: 'Sylvaine Colas', value: 'Sylvaine Colas' },
         ]
       }
-      // Sans "layout: 'radio'", Sanity affiche un menu déroulant
-      // ET permet de taper une valeur libre si elle n'est pas dans la liste
     },
     {
-      // Option C : tableau de strings avec liste prédéfinie
-      // La responsable coche les niveaux existants
-      // ET peut cliquer "Add item" pour en saisir un nouveau librement
       name: 'niveaux',
       title: 'Niveaux acceptés',
       type: 'array',
@@ -83,7 +69,6 @@ export default {
       }
     },
     {
-      // Même principe pour les âges
       name: 'ages',
       title: 'Âges acceptés',
       type: 'array',
