@@ -32,11 +32,6 @@ export default {
       }
     },
     {
-      name: 'couleur',
-      title: 'Couleur (format HSL ex: hsl(0 72% 50%))',
-      type: 'string',
-    },
-    {
       name: 'description',
       title: 'Description',
       type: 'text',
@@ -49,10 +44,12 @@ export default {
     },
     {
       name: 'horaires',
-      title: 'Horaires (ex: Mardi & Jeudi — 18h30 à 20h00)',
+      title: 'Horaires (ex: Mardi et Jeudi de 18h30 à 20h00)',
       type: 'string',
     },
     {
+      // Option C : liste prédéfinie + saisie libre
+      // La responsable choisit dans la liste OU tape un nouveau nom
       name: 'professeur',
       title: 'Professeur',
       type: 'string',
@@ -65,8 +62,13 @@ export default {
           { title: 'Sylvaine Colas', value: 'Sylvaine Colas' },
         ]
       }
+      // Sans "layout: 'radio'", Sanity affiche un menu déroulant
+      // ET permet de taper une valeur libre si elle n'est pas dans la liste
     },
     {
+      // Option C : tableau de strings avec liste prédéfinie
+      // La responsable coche les niveaux existants
+      // ET peut cliquer "Add item" pour en saisir un nouveau librement
       name: 'niveaux',
       title: 'Niveaux acceptés',
       type: 'array',
@@ -81,6 +83,7 @@ export default {
       }
     },
     {
+      // Même principe pour les âges
       name: 'ages',
       title: 'Âges acceptés',
       type: 'array',
@@ -97,7 +100,7 @@ export default {
     },
     {
       name: 'ordre',
-      title: 'Ordre d\'affichage',
+      title: "Ordre d'affichage",
       type: 'number',
     }
   ]
