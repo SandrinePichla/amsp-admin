@@ -35,9 +35,18 @@ export default {
       options: { hotspot: true }
     },
     {
-      name: 'professeur',
-      title: 'Professeur',
-      type: 'string',
+  name: 'professeur',
+  title: 'Professeur',
+  type: 'string',
+  options: {
+    list: [
+      { title: 'Stéphanie Lamoureux', value: 'StephanieLamoureux' },
+      { title: 'Myriam Reuter', value: 'MyriamReuter' },
+      { title: 'Alexandre Houze', value: 'AlexandreHouze' },
+      { title: 'Jérémie Sigalat', value: 'JeremieSigalat' },
+      { title: 'Sylvaine Colas', value: 'SylvaineColas' },
+      ]
+    }
     },
     {
       name: 'niveaux',
