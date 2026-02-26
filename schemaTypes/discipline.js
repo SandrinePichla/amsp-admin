@@ -15,12 +15,11 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: '✨ Sparkles (Karaté)', value: 'Sparkles' },
-          { title: '⭕ CircleDot (Viet Vo Dao)', value: 'CircleDot' },
-          { title: '🛡 Shield (Aïkido)', value: 'Shield' },
-          { title: '💨 Wind (Tai Chi / Qi Gong)', value: 'Wind' },
-          { title: '⚔️ Swords (Épée)', value: 'Swords' },
-          { title: '✋ Hand (Wutao)', value: 'Hand' },
+          { title: '🛡 Shield (Karaté Shotokan)', value: 'Shield' },
+          { title: '💨 Wind (Tai Chi - main nue)', value: 'Wind' },
+          { title: '⚔️ Swords (Tai Chi - épée)', value: 'Swords' },
+          { title: '🌿 Leaf (Qi Gong)', value: 'Leaf' },
+          { title: '🌊 Waves (Wutao)', value: 'Waves' },
         ]
       }
     },
