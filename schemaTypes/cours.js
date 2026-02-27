@@ -47,8 +47,8 @@ export default {
         list: [
           { title: 'Tous niveaux', value: 'tous' },
           { title: 'Débutant', value: 'debutant' },
-          { title: 'Intermédiaire', value: 'intermediaire' },
-          { title: 'Expert', value: 'expert' }
+          { title: 'Confirmé', value: 'confirme' },
+          { title: 'Tous niveaux', value: 'tousNiveau' }
         ]
       }
     },
@@ -65,8 +65,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Dojo Gymnase', value: 'dojoGymnase' },
-          { title: 'Salle des fêtes', value: 'salleDesFetes' },
+          { title: 'Dojo Gymnase', value: 'dojo Gymnase' },
+          { title: 'Salle des fêtes', value: 'salle Des Fetes' },
         ]
       }
     }
