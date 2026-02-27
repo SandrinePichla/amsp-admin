@@ -44,8 +44,7 @@ export default {
       title: 'Niveau',
       type: 'string',
       options: {
-        list: [
-          { title: 'Tous niveaux', value: 'tous' },
+        list: [          
           { title: 'Débutant', value: 'Débutant' },
           { title: 'Confirmé', value: 'Confirmé' },
           { title: 'Tous niveaux', value: 'Tous niveaux' }
