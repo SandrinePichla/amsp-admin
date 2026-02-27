@@ -4,53 +4,44 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'categorie',
-      title: 'Catégorie',
-      type: 'string',
-      validation: Rule => Rule.required(),
-      options: {
-        list: [
-          { title: 'Enfant', value: 'enfant' },
-          { title: 'Adulte', value: 'adulte' },
-          { title: 'Famille', value: 'famille' },
-          { title: 'Tarif réduit', value: 'reduit' }
-        ]
-      }
-    },
-    {
       name: 'discipline',
-      title: 'Discipline',
-      type: 'reference',
-      to: [{ type: 'discipline' }],
+      title: 'Discipline / Catégorie',
+      type: 'string',
+      description: 'Ex: Karaté Enfants 6/8 ans, Wutao, Qi Gong...',
       validation: Rule => Rule.required()
     },
     {
-      name: 'prix',
-      title: 'Prix (€)',
-      type: 'number',
-      validation: Rule => Rule.required().min(0)
+      name: 'jours',
+      title: 'Jours de cours',
+      type: 'string',
+      description: 'Ex: Samedi et Mardi'
     },
     {
-      name: 'description',
-      title: 'Description',
+      name: 'prixAnnuel',
+      title: 'Prix annuel (€)',
+      type: 'number',
+    },
+    {
+      name: 'echeancier',
+      title: 'Échéancier de paiement',
       type: 'string',
+      description: 'Ex: 1x55€ + 3x45€ ou 2x60€ – 2x50€'
     },
     {
       name: 'ordre',
-      title: 'Ordre d\'affichage',
+      title: "Ordre d'affichage",
       type: 'number',
     }
   ],
   preview: {
     select: {
-      categorie: 'categorie',
-      discipline: 'discipline.nom',
-      prix: 'prix'
+      discipline: 'discipline',
+      prix: 'prixAnnuel'
     },
-    prepare({ categorie, discipline, prix }) {
+    prepare({ discipline, prix }) {
       return {
-        title: `${discipline || 'Discipline'} — ${categorie || ''}`,
-        subtitle: `${prix || 0} €`
+        title: discipline,
+        subtitle: prix ? `${prix} €/an` : ''
       }
     }
   }
