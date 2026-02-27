@@ -53,6 +53,13 @@ export default {
       }
     },
     {
+      name: 'ages',
+      title: 'Âges acceptés',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description: 'Suggestions : 6-8 ans, 9-12 ans, 13 ans et +, 14 ans et +, Adultes',
+    },
+    {
       name: 'lieu',
       title: 'Lieu',
       type: 'string',
