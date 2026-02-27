@@ -6,15 +6,22 @@ export default {
     {
       name: 'discipline',
       title: 'Discipline',
-      type: 'string',
-      description: 'Ex: Karaté, Wutao, Qi Gong...',
+      type: 'reference',
+      to: [{ type: 'discipline' }],
       validation: Rule => Rule.required()
     },
     {
       name: 'categorie',
-      title: 'Catégorie / Tranche d\'âge',
+      title: 'Catégorie d\'âge',
       type: 'string',
-      description: 'Laisser vide si pas de sous-catégorie. Ex: Enfants 6/8 ans, 18 ans et +'
+      description: 'Laisser vide si pas de sous-catégorie',
+      options: {
+        list: [
+          { title: 'Enfants 6/8 ans', value: 'Enfants 6/8 ans' },
+          { title: 'Enfants 9/17 ans', value: 'Enfants 9/17 ans' },
+          { title: '18 ans et +', value: '18 ans et +' },
+        ]
+      }
     },
     {
       name: 'jours',
@@ -41,7 +48,7 @@ export default {
   ],
   preview: {
     select: {
-      discipline: 'discipline',
+      discipline: 'discipline.nom',
       categorie: 'categorie',
       prix: 'prixAnnuel'
     },
