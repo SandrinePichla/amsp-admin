@@ -20,14 +20,27 @@ export default {
           { title: 'Enfants 6/8 ans', value: 'Enfants 6/8 ans' },
           { title: 'Enfants 9/17 ans', value: 'Enfants 9/17 ans' },
           { title: '18 ans et +', value: '18 ans et +' },
-        ]
+        ],
+        layout: 'radio'
       }
     },
     {
+      // Cases à cocher pour les jours
       name: 'jours',
       title: 'Jours de cours',
-      type: 'string',
-      description: 'Ex: Samedi et Mardi'
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Lundi', value: 'Lundi' },
+          { title: 'Mardi', value: 'Mardi' },
+          { title: 'Mercredi', value: 'Mercredi' },
+          { title: 'Jeudi', value: 'Jeudi' },
+          { title: 'Vendredi', value: 'Vendredi' },
+          { title: 'Samedi', value: 'Samedi' },
+          { title: 'Dimanche', value: 'Dimanche' },
+        ]
+      }
     },
     {
       name: 'prixAnnuel',
