@@ -22,6 +22,13 @@ export default {
       to: [{ type: 'discipline' }],
     },
     {
+      name: 'prive',
+      title: 'Album privé (membres uniquement)',
+      type: 'boolean',
+      initialValue: false,
+      description: 'Si coché, visible uniquement par les membres connectés'
+    },
+    {
       name: 'photos',
       title: 'Photos',
       type: 'array',
@@ -50,11 +57,12 @@ export default {
     select: {
       titre: 'titre',
       date: 'date',
+      prive: 'prive',
       media: 'photos.0'
     },
-    prepare({ titre, date, media }) {
+    prepare({ titre, date, prive, media }) {
       return {
-        title: titre || 'Album sans titre',
+        title: `${prive ? '🔒 ' : ''}${titre || 'Album sans titre'}`,
         subtitle: date || '',
         media
       }
