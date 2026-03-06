@@ -44,8 +44,7 @@ export default {
           type: 'image',
           options: {
             hotspot: true,
-            accept: 'image/*',
-            storeOriginalFilename: true
+            accept: 'image/*',            
           },
           fields: [
             {
