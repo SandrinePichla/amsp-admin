@@ -6,5 +6,6 @@ import tarifSpecial from './tarifSpecial'
 import galerie from './galerie'
 import parametres from './parametres'
 import asso from './asso'
+import instructeur from './instructeur'
 
-export const schemaTypes = [actualite, discipline, cours, tarif, tarifSpecial, galerie, parametres, asso]
+export const schemaTypes = [actualite, discipline, cours, tarif, tarifSpecial, galerie, parametres, asso, instructeur]
