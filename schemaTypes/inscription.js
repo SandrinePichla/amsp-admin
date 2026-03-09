@@ -12,6 +12,13 @@ export default {
       rows: 20,
     },
     {
+      name: 'saison',
+      title: 'Saison en cours',
+      type: 'string',
+      description: 'Ex : 2025-2026. Utilisé dans les inscriptions enregistrées.',
+      initialValue: '2025-2026',
+    },
+    {
       name: 'titreInfosPaiement',
       title: 'Titre infos paiement',
       type: 'string',
@@ -31,6 +38,19 @@ export default {
       type: 'text',
       description: "Texte de la case à cocher 'Droit à l'image'.",
       rows: 3,
+    },
+    {
+      name: 'texteAutorisationParentale',
+      title: 'Texte autorisation parentale (mineurs)',
+      type: 'text',
+      description: 'Texte affiché dans le bloc autorisation parentale (pour les mineurs).',
+      rows: 6,
+    },
+    {
+      name: 'texteInfosCertificatMedical',
+      title: 'Note certificat médical',
+      type: 'string',
+      description: 'Petite note sous le droit à l\'image. Ex: "Le certificat médical n\'est plus obligatoire..."',
     },
   ],
   preview: {

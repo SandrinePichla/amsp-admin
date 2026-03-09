@@ -8,7 +8,13 @@ export default {
       title: 'Nom complet',
       type: 'string',
       validation: Rule => Rule.required()
-    },    
+    },
+    {
+      name: 'nomCourt',
+      title: 'Nom court (affiché dans le planning)',
+      type: 'string',
+      description: 'Ex: "Karaté" pour "Karaté Shotokan", "Tai Chi" pour "Tai Chi Épée et Main Nue"',
+    },
     {
       // Option A — liste fermée avec menu déroulant
       name: 'icone',
