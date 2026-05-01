@@ -10,10 +10,11 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'discipline',
-      title: 'Discipline enseignée',
-      type: 'reference',
-      to: [{ type: 'discipline' }],
+      name: 'disciplines',
+      title: 'Disciplines enseignées',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'discipline' }] }],
+      description: 'Sélectionner une ou plusieurs disciplines',
     },
     {
       name: 'telephone',
@@ -26,10 +27,33 @@ export default {
       type: 'string',
     },
     {
+      name: 'grade',
+      title: 'Grade / Niveau',
+      type: 'string',
+      description: 'Ex : Ceinture noire 3e dan, Enseignant certifié…',
+    },
+    {
       name: 'bio',
-      title: 'Biographie courte',
+      title: 'Biographie / Texte libre',
       type: 'text',
-      rows: 3,
+      rows: 5,
+    },
+    {
+      name: 'liens',
+      title: 'Sites personnels',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'label', title: 'Libellé', type: 'string', validation: Rule => Rule.required() },
+            { name: 'url', title: 'URL', type: 'url', validation: Rule => Rule.required() },
+          ],
+          preview: {
+            select: { title: 'label', subtitle: 'url' },
+          },
+        },
+      ],
     },
     {
       name: 'photo',
@@ -46,7 +70,7 @@ export default {
   preview: {
     select: {
       title: 'nom',
-      subtitle: 'discipline.nom',
+      subtitle: 'disciplines.0.nom',
       media: 'photo',
     },
   },
