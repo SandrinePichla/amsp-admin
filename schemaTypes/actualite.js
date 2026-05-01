@@ -79,6 +79,20 @@ export default {
       title: 'Publié',
       type: 'boolean',
       initialValue: false
+    },
+    {
+      name: 'statut',
+      title: 'Statut',
+      type: 'string',
+      options: {
+        list: [
+          { title: '✅ Normal', value: 'normal' },
+          { title: '❌ Annulé', value: 'annule' },
+          { title: '⚠️ Modifié', value: 'modifie' },
+        ]
+      },
+      initialValue: 'normal',
+      description: 'Utilisé pour signaler une annulation ou une modification sur le site'
     }
   ],
   preview: {
@@ -86,11 +100,13 @@ export default {
       titre: 'titre',
       type: 'type',
       date: 'date',
+      statut: 'statut',
       media: 'image'
     },
-    prepare({ titre, type, date, media }) {
+    prepare({ titre, type, date, statut, media }) {
+      const statutLabel = statut === 'annule' ? ' ❌' : statut === 'modifie' ? ' ⚠️' : '';
       return {
-        title: titre,
+        title: `${titre}${statutLabel}`,
         subtitle: `${type === 'stage' ? '🥋 Stage' : '📢 Actu'} — ${date || 'Sans date'}`,
         media
       }
