@@ -40,9 +40,16 @@ export default {
     },
     {
       name: 'image',
-      title: 'Image / Flyer',
+      title: 'Image / Flyer (image)',
       type: 'image',
       options: { hotspot: true }
+    },
+    {
+      name: 'flyer',
+      title: 'Flyer PDF',
+      type: 'file',
+      options: { accept: 'application/pdf' },
+      description: 'Uploader un flyer au format PDF (alternatif à l\'image)'
     },
     {
       name: 'lieu',
