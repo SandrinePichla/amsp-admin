@@ -4,7 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      // Discipline en premier, optionnelle
       name: 'discipline',
       title: 'Discipline associée',
       type: 'reference',
@@ -12,7 +11,6 @@ export default {
       description: 'Laisser vide pour "Toutes disciplines"'
     },
     {
-      // Titre optionnel
       name: 'titre',
       title: 'Nom de l\'album (optionnel)',
       type: 'string',
@@ -32,20 +30,14 @@ export default {
       description: 'Si coché, visible uniquement par les membres connectés'
     },
     {
-      // Upload multiple activé
       name: 'photos',
       title: 'Photos',
       type: 'array',
-      options: {
-        layout: 'grid' // Affichage en grille dans Sanity
-      },
+      options: { layout: 'grid' },
       of: [
         {
           type: 'image',
-          options: {
-            hotspot: true,
-            accept: 'image/*',            
-          },
+          options: { hotspot: true, accept: 'image/*' },
           fields: [
             {
               name: 'legende',
@@ -53,6 +45,62 @@ export default {
               type: 'string',
             }
           ]
+        }
+      ]
+    },
+    {
+      name: 'videos',
+      title: 'Vidéos',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'video_upload',
+          title: 'Vidéo uploadée',
+          fields: [
+            {
+              name: 'fichier',
+              title: 'Fichier vidéo',
+              type: 'file',
+              options: { accept: 'video/*' }
+            },
+            {
+              name: 'legende',
+              title: 'Légende',
+              type: 'string'
+            }
+          ],
+          preview: {
+            select: { legende: 'legende' },
+            prepare({ legende }) {
+              return { title: legende || 'Vidéo uploadée' }
+            }
+          }
+        },
+        {
+          type: 'object',
+          name: 'video_youtube',
+          title: 'Lien YouTube',
+          fields: [
+            {
+              name: 'youtubeUrl',
+              title: 'URL YouTube',
+              type: 'url',
+              description: 'Ex: https://www.youtube.com/watch?v=abc123 ou https://youtu.be/abc123',
+              validation: Rule => Rule.uri({ scheme: ['http', 'https'] })
+            },
+            {
+              name: 'legende',
+              title: 'Légende',
+              type: 'string'
+            }
+          ],
+          preview: {
+            select: { legende: 'legende', url: 'youtubeUrl' },
+            prepare({ legende, url }) {
+              return { title: legende || url || 'Lien YouTube' }
+            }
+          }
         }
       ]
     },
