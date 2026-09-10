@@ -32,6 +32,8 @@ export default {
           { title: '💨 Vent — souffle, tai chi, qi gong', value: 'Wind' },
           { title: '🌊 Vagues — fluidité, mouvement', value: 'Waves' },
           { title: '🌿 Feuille — énergie interne, nature', value: 'Leaf' },
+          { title: '🪶 Plume — légèreté, souplesse', value: 'Feather' },
+          { title: '🔥 Flamme — énergie, intensité', value: 'Flame' },
           { title: '⭕ Cible — précision', value: 'CircleDot' },
           { title: '✨ Étincelles — générique (par défaut)', value: 'Sparkles' },
         ],
