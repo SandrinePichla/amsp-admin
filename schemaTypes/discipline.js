@@ -16,22 +16,27 @@ export default {
       description: 'Ex: "Karaté" pour "Karaté Shotokan", "Tai Chi" pour "Tai Chi Épée et Main Nue"',
     },
     {
-      // Option A — liste fermée avec menu déroulant
+      // Menu déroulant fermé : l'admin choisit un libellé, la valeur est câblée
+      // côté site dans src/iconesDisciplines.ts. Toute valeur hors liste retombe
+      // sur « Sparkles ». Ajouter une icône = l'ajouter aussi dans ce fichier-là.
       name: 'icone',
       title: 'Icône',
       type: 'string',
+      description: 'Symbole affiché à côté du nom de la discipline sur le site. En cas de doute, choisir « Étincelles ».',
       options: {
+        layout: 'dropdown',
         list: [
-          { title: '🛡 Shield (Karaté Shotokan)', value: 'Shield' },
-          { title: '⚔️ Swords (Viet Vo Dao / Épée)', value: 'Swords' },
-          { title: '💨 Wind (Tai Chi)', value: 'Wind' },
-          { title: '🌿 Leaf (Qi Gong)', value: 'Leaf' },
-          { title: '🌊 Waves (Wutao)', value: 'Waves' },
-          { title: '✋ Hand (Aïkido)', value: 'Hand' },
-          { title: '⭕ CircleDot', value: 'CircleDot' },
-          { title: '✨ Sparkles', value: 'Sparkles' },
-        ]
-      }
+          { title: '🛡 Bouclier — défense, arts martiaux', value: 'Shield' },
+          { title: '⚔️ Épées croisées — combat, armes', value: 'Swords' },
+          { title: '✋ Main — contact, self-défense', value: 'Hand' },
+          { title: '💨 Vent — souffle, tai chi, qi gong', value: 'Wind' },
+          { title: '🌊 Vagues — fluidité, mouvement', value: 'Waves' },
+          { title: '🌿 Feuille — énergie interne, nature', value: 'Leaf' },
+          { title: '⭕ Cible — précision', value: 'CircleDot' },
+          { title: '✨ Étincelles — générique (par défaut)', value: 'Sparkles' },
+        ],
+      },
+      initialValue: 'Sparkles',
     },
     {
       name: 'description',
