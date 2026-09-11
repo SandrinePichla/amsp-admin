@@ -8,5 +8,6 @@ import parametres from './parametres'
 import asso from './asso'
 import instructeur from './instructeur'
 import inscription from './inscription'
+import grilleTarifs from './grilleTarifs'
 
-export const schemaTypes = [actualite, discipline, cours, tarif, tarifSpecial, galerie, parametres, asso, instructeur, inscription]
+export const schemaTypes = [actualite, discipline, cours, tarif, tarifSpecial, galerie, parametres, asso, instructeur, inscription, grilleTarifs]

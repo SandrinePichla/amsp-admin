@@ -31,7 +31,7 @@ export default {
       type: 'text',
       description: 'Texte affiché dans le bloc de règlement des cotisations.',
       rows: 4,
-      initialValue: "1 chèque de 60€ encaissé à l'inscription (non remboursable) + le solde en 3 chèques encaissables en décembre 2025, mars 2026 et juin 2026. Chèques à l'ordre des Arts Martiaux St Pierrois.",
+      initialValue: "Le tarif dépend du nombre d'activités choisies et du nombre de personnes inscrites de la même famille — reportez-vous à la grille tarifaire ou contactez-nous. Le règlement peut s'effectuer en 1 ou 4 fois par chèque, à l'ordre des Arts Martiaux St Pierrois.",
     },
     {
       name: 'texteAutorisationImage',

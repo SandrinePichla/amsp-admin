@@ -25,24 +25,6 @@ export default {
       }
     },
     {
-      // Cases à cocher pour les jours
-      name: 'jours',
-      title: 'Jours de cours',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        list: [
-          { title: 'Lundi', value: 'Lundi' },
-          { title: 'Mardi', value: 'Mardi' },
-          { title: 'Mercredi', value: 'Mercredi' },
-          { title: 'Jeudi', value: 'Jeudi' },
-          { title: 'Vendredi', value: 'Vendredi' },
-          { title: 'Samedi', value: 'Samedi' },
-          { title: 'Dimanche', value: 'Dimanche' },
-        ]
-      }
-    },
-    {
       name: 'prixAnnuel',
       title: 'Prix annuel (€)',
       type: 'number',
